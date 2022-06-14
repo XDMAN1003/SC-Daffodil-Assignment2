@@ -1,0 +1,50 @@
+##############################################################
+# Mobile Application Programming (SCSJ3623)
+# Semester 2, 2019/2020
+##############################################################
+
+# REST API Server on Local Firebase
+# @baseUrl = http://localhost:5001/jumail-backend-firebase-rest/us-central1/api
+
+# REST API Server on Live Firebase
+//@baseUrl = https://us-central1-jumail-backend-firebase-rest.cloudfunctions.net/api
+@baseUrl = http://localhost:5001/pestatanglungstore/us-central1/api
+//@baseUrl = https://us-central1-nodewithfirebase-student.cloudfunctions.net/api
+
+### Getting the list of items in the store
+GET {{baseUrl}}/store
+
+###  Getting a item of given id
+GET {{baseUrl}}/store/4pS5Z6jaOmUZSHT4G0cI
+
+###  Create a new item
+POST {{baseUrl}}/store
+Content-Type: application/json
+
+{
+    "title": "Pelaka (White)",
+    "quantity": 10
+}
+
+
+
+### Update the status of a given user (whether is SP Residents or Admin)
+PATCH {{baseUrl}}/store/t0VZ5lqFi73hitd5Ayww
+Content-Type: application/json
+
+{
+    "quantity": 15
+}
+
+
+### Replace the entire fields of a given items
+PUT {{baseUrl}}/store/t0VZ5lqFi73hitd5Ayww
+Content-Type: application/json
+
+{
+    "title": "Pelaka (Amber)",
+    "quantity": 10
+}
+
+### Deleting a given items
+DELETE {{baseUrl}}/store/t0VZ5lqFi73hitd5Ayww
