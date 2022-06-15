@@ -1,12 +1,14 @@
 // const { response } = require("express");
 const express = require("express");
 const functions = require("firebase-functions");
+var cors = require('cors');
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.get("/", (req, res, next)=> res.json({message: "Firebase service is working!"}));
 // app.get("/todos", (req,res,next)=> res.json({ message: "Get a list of todos"}));
 // Get Hello World
